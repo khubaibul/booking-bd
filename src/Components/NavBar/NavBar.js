@@ -37,7 +37,7 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
-                    <NavLink to="/home" className="btn btn-ghost normal-case lg:text-3xl font-bold ">
+                    <NavLink to="/home" className="btn btn-ghost normal-case lg:text-3xl text-2xl font-bold ">
                         CodeQuizGame
                     </NavLink>
                 </div>
