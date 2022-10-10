@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css'
 
@@ -21,8 +20,8 @@ const NavBar = () => {
                                     <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                 </a>
                                 <ul className="p-2 bg-base-100">
-                                    <li><NavLink to="/react">React</NavLink></li>
-                                    <li><NavLink to="/javascript">JavaScript</NavLink></li>
+                                    <li><NavLink to="/quiz/1">React</NavLink></li>
+                                    <li><NavLink to="/quiz/2">JavaScript</NavLink></li>
                                     <li><NavLink to="/css">CSS</NavLink></li>
                                     <li><NavLink to="/git">Git</NavLink></li>
                                 </ul>
@@ -38,7 +37,7 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </div>
-                    <NavLink className="btn btn-ghost normal-case lg:text-3xl font-bold ">
+                    <NavLink to="/home" className="btn btn-ghost normal-case lg:text-3xl font-bold ">
                         CodeQuizGame
                     </NavLink>
                 </div>
@@ -53,10 +52,10 @@ const NavBar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </a>
                             <ul className="p-2 bg-base-100">
-                                <li><NavLink to="/react">React</NavLink></li>
-                                <li><NavLink to="/javascript">JavaScript</NavLink></li>
-                                <li><NavLink to="/css">CSS</NavLink></li>
-                                <li><NavLink to="/git">Git</NavLink></li>
+                                <li><NavLink to="/quiz/1">React</NavLink></li>
+                                <li><NavLink to="/quiz/2">JavaScript</NavLink></li>
+                                <li><NavLink to="/quiz/4">CSS</NavLink></li>
+                                <li><NavLink to="/quiz/5">Git</NavLink></li>
                             </ul>
                         </li>
                         <li>
