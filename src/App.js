@@ -1,8 +1,19 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Main from "./Layout/Main";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main></Main>,
+      children: [
+
+      ]
+    }
+  ])
   return (
     <div>
-      <h1>This is Assignment-9</h1>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
