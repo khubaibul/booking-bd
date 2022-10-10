@@ -22,8 +22,8 @@ const NavBar = () => {
                                 <ul className="p-2 bg-base-100">
                                     <li><NavLink to="/quiz/1">React</NavLink></li>
                                     <li><NavLink to="/quiz/2">JavaScript</NavLink></li>
-                                    <li><NavLink to="/css">CSS</NavLink></li>
-                                    <li><NavLink to="/git">Git</NavLink></li>
+                                    <li><NavLink to="/quiz/4">CSS</NavLink></li>
+                                    <li><NavLink to="/quiz/5">Git</NavLink></li>
                                 </ul>
                             </li>
                             <li>
