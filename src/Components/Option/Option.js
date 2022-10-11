@@ -1,21 +1,28 @@
-import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 const notifySuccess = () => toast.success('Your Answer Is Right');
 const notifyWrong = () => toast.error('Your Answer Is Wrong');
 
+let rightCount = 0;
+let wrongCount = 0;
 
-const Option = ({ option, correctAnswer, idx }) => {
+const Option = ({ option, correctAnswer, setRightCount, setWrongCount }) => {
     const handleQuizAnswer = selected => {
         if (selected === correctAnswer) {
             <Toaster></Toaster>
             notifySuccess()
+            rightCount = rightCount + 1;
         }
         else {
             <Toaster></Toaster>
             notifyWrong()
+            wrongCount = wrongCount + 1;
         }
+        setRightCount(rightCount);
+        setWrongCount(wrongCount);
     }
+
+
     // ${option === correctAnswer? "bg-green-500" : "bg-red-600"}
     return (
         <div className={`hover:bg-slate-600 bg-slate-400 p-5 border border-slate-700 m-2 rounded-lg `}>

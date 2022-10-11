@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLoaderData } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,10 @@ import './QuizCard.css'
 const correctAnswerToast = (correctAnswer) => toast.success(correctAnswer);
 
 const QuizCard = () => {
+
+    const [rightCount, setRightCount] = useState(0);
+    const [wrongCount, setWrongCount] = useState(0);
+
     const quizCard = useLoaderData();
     const { name, logo, total, questions } = quizCard.data;
 
@@ -28,10 +32,11 @@ const QuizCard = () => {
             <div className='question-container lg:grid'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
                     {
-                        questions.map(singleQuestion => {
+                        questions.map((singleQuestion) => {
                             return <div className='flex border lg:m-5 bg-slate-400 p-5 rounded-lg'>
-                                <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion} ></SingleQuestion>
-                                <button onClick={() => showCorrectAnswer(singleQuestion.correctAnswer)} className='btn btn-accent btn-sm'>
+                                <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion} setRightCount={setRightCount} setWrongCount={setWrongCount}></SingleQuestion>
+                                <button onClick={() => showCorrectAnswer(singleQuestion.correctAnswer)}
+                                    className='btn btn-accent btn-sm'>
                                     <span className='flex items-center justify-center'><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></span>
                                 </button>
                             </div>
@@ -40,8 +45,8 @@ const QuizCard = () => {
                 </div>
                 <div>
                     <div className='ans-calculation bg-slate-400 lg:mt-5 rounded-lg p-5'>
-                        <h4>Correct Answer: 5</h4>
-                        <h4>Wrong Answer: 5</h4>
+                        <h4 className='text-xl font-bold'>Correct Answer: <span className='text-accent font-mono font-bold'>{rightCount}</span></h4>
+                        <h4 className='text-xl font-bold'>Wrong Answer: <span className='text-accent font-mono font-bold'>{wrongCount}</span></h4>
                     </div>
                 </div>
             </div>

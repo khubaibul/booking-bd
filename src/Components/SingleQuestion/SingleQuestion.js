@@ -1,14 +1,12 @@
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquare } from '@fortawesome/free-solid-svg-icons'
 import Option from '../Option/Option';
 
 
 
-const SingleQuestion = ({ singleQuestion }) => {
+const SingleQuestion = ({ singleQuestion, setRightCount, setWrongCount }) => {
     const { question, options, correctAnswer } = singleQuestion;
-    const notifySuccess = () => toast.success({});
     const splitQuestion = question.replace(/(<([^>]+)>)/gi, "")
 
 
@@ -19,7 +17,7 @@ const SingleQuestion = ({ singleQuestion }) => {
             </div>
             <div className='grid lg:grid-cols-2'>
                 {
-                    options.map((option, idx) => <Option key={idx} option={option} correctAnswer={correctAnswer}></Option>)
+                    options.map((option, idx) => <Option key={idx} option={option} correctAnswer={correctAnswer} setRightCount={setRightCount} setWrongCount={setWrongCount}></Option>)
                 }
             </div>
         </div>
