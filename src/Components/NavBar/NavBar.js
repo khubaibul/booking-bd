@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import './NavBar.css'
+import './NavBar.css';
+import logo from "../../Utilities/choose.png";
 
 const NavBar = () => {
     return (
@@ -38,7 +39,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <NavLink to="/home" className="btn btn-ghost normal-case lg:text-3xl text-2xl font-bold ">
-                        CodeQuizGame
+                        <img className='w-[5%] sm:hidden mr-2 lg:flex md:flex items-center justify-center' src={logo} alt="" /> CodeQuizGame
                     </NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">

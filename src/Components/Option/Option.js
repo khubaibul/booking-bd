@@ -22,8 +22,6 @@ const Option = ({ option, correctAnswer, setRightCount, setWrongCount }) => {
         setWrongCount(wrongCount);
     }
 
-
-    // ${option === correctAnswer? "bg-green-500" : "bg-red-600"}
     return (
         <div className={`hover:bg-slate-600 bg-slate-400 p-5 border border-slate-700 m-2 rounded-lg `}>
             <label className="label cursor-pointer">

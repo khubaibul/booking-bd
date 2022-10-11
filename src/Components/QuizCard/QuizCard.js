@@ -20,8 +20,6 @@ const QuizCard = () => {
 
     const quizCard = useLoaderData();
     const { name, logo, total, questions } = quizCard.data;
-    console.log(quizCard);
-
     const showCorrectAnswer = (correctAnswer) => {
         correctAnswerToast(correctAnswer);
         <Toaster></Toaster>
@@ -38,9 +36,9 @@ const QuizCard = () => {
             <div className='question-container lg:grid'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
                     {
-                        questions.map((singleQuestion) => {
+                        questions.map((singleQuestion, index) => {
                             return <div className='flex border lg:m-4 bg-slate-400 p-1 rounded-lg'>
-                                <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion} setRightCount={setRightCount} setWrongCount={setWrongCount}></SingleQuestion>
+                                <SingleQuestion number={index} key={singleQuestion.id} singleQuestion={singleQuestion} setRightCount={setRightCount} setWrongCount={setWrongCount}></SingleQuestion>
                                 <button onClick={() => showCorrectAnswer(singleQuestion.correctAnswer)}
                                     className='btn btn-accent btn-sm'>
                                     <span className='flex items-center justify-center'><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></span>
