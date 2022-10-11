@@ -13,7 +13,7 @@ const SingleQuestion = ({ singleQuestion, setRightCount, setWrongCount }) => {
     return (
         <div>
             <div className='flex justify-between'>
-                <h2 className='text-center text-2xl font-bold text-justify'><FontAwesomeIcon className='mr-2' icon={faSquare}></FontAwesomeIcon>{splitQuestion}</h2>
+                <h2 className='text-2xl font-bold text-justify'><FontAwesomeIcon className='mr-2' icon={faSquare}></FontAwesomeIcon>{splitQuestion}</h2>
             </div>
             <div className='grid lg:grid-cols-2'>
                 {

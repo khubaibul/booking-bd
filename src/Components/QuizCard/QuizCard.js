@@ -6,7 +6,12 @@ import { faEye } from '@fortawesome/free-solid-svg-icons'
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
 import './QuizCard.css'
 
-const correctAnswerToast = (correctAnswer) => toast.success(correctAnswer);
+const correctAnswerToast = (correctAnswer) => toast(
+    "Correct Answer Is:  " + correctAnswer,
+    {
+        duration: 3500,
+    }
+);
 
 const QuizCard = () => {
 
@@ -15,6 +20,7 @@ const QuizCard = () => {
 
     const quizCard = useLoaderData();
     const { name, logo, total, questions } = quizCard.data;
+    console.log(quizCard);
 
     const showCorrectAnswer = (correctAnswer) => {
         correctAnswerToast(correctAnswer);
