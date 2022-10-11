@@ -1,11 +1,23 @@
 import React from 'react';
 import { NavLink, useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
 import './QuizCard.css'
+
+const correctAnswerToast = (correctAnswer) => toast.success(correctAnswer);
 
 const QuizCard = () => {
     const quizCard = useLoaderData();
     const { name, logo, total, questions } = quizCard.data;
+
+    const showCorrectAnswer = (correctAnswer) => {
+        correctAnswerToast(correctAnswer);
+        <Toaster></Toaster>
+    }
+
+
     return (
         <div className='overflow-hidden'>
             <div className='bg-slate-400 lg:w-[80%] lg:mx-auto mx-2 flex flex-col justify-center items-center rounded my-5 p-5'>
@@ -16,7 +28,14 @@ const QuizCard = () => {
             <div className='question-container lg:grid'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
                     {
-                        questions.map(singleQuestion => <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion}></SingleQuestion>)
+                        questions.map(singleQuestion => {
+                            return <div className='flex border lg:m-5 bg-slate-400 p-5 rounded-lg'>
+                                <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion} ></SingleQuestion>
+                                <button onClick={() => showCorrectAnswer(singleQuestion.correctAnswer)} className='btn btn-accent btn-sm'>
+                                    <span className='flex items-center justify-center'><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></span>
+                                </button>
+                            </div>
+                        })
                     }
                 </div>
                 <div>

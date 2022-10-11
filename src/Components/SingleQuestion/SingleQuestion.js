@@ -1,21 +1,25 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faSquare } from '@fortawesome/free-solid-svg-icons'
 import Option from '../Option/Option';
 
+
+
 const SingleQuestion = ({ singleQuestion }) => {
-    const { question, options } = singleQuestion;
+    const { question, options, correctAnswer } = singleQuestion;
+    const notifySuccess = () => toast.success({});
+    const splitQuestion = question.replace(/(<([^>]+)>)/gi, "")
+
+
     return (
-        <div className='border m-5 bg-slate-400 p-5 rounded-lg'>
+        <div>
             <div className='flex justify-between'>
-                <h2 className='text-center text-2xl font-bold'>{question}</h2>
-                <button className='btn btn-accent btn-sm'>
-                    <span className='flex items-center justify-center'><FontAwesomeIcon icon={faEye}></FontAwesomeIcon></span>
-                </button>
+                <h2 className='text-center text-2xl font-bold'><FontAwesomeIcon className='mr-2' icon={faSquare}></FontAwesomeIcon>{splitQuestion}</h2>
             </div>
             <div className='grid lg:grid-cols-2'>
                 {
-                    options.map((option, idx) => <Option key={idx} option={option}></Option>)
+                    options.map((option, idx) => <Option key={idx} option={option} correctAnswer={correctAnswer}></Option>)
                 }
             </div>
         </div>

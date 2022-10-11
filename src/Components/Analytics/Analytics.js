@@ -10,10 +10,10 @@ const Analytics = () => {
     const allQuiz = quizzes.data;
 
     const data = [
-        { name: 'React', value: allQuiz[0].total, icons: faR, colors: 'text-[#0088FE]' },
-        { name: 'JavaScript', value: allQuiz[1].total, icons: faJ, colors: 'text-[#00C49F]' },
-        { name: 'CSS', value: allQuiz[2].total, icons: faC, colors: 'text-[#FFBB28]' },
-        { name: 'Git', value: allQuiz[3].total, icons: faG, colors: 'text-[#FF8042]' },
+        { name: allQuiz[0].name, value: allQuiz[0].total, icons: faR, colors: 'text-[#0088FE]' },
+        { name: allQuiz[1].name, value: allQuiz[1].total, icons: faJ, colors: 'text-[#00C49F]' },
+        { name: allQuiz[2].name, value: allQuiz[2].total, icons: faC, colors: 'text-[#FFBB28]' },
+        { name: allQuiz[3].name, value: allQuiz[3].total, icons: faG, colors: 'text-[#FF8042]' },
     ];
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#ff7979'];
 
