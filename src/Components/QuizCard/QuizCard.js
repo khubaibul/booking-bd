@@ -33,7 +33,7 @@ const QuizCard = () => {
                 <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
                     {
                         questions.map((singleQuestion) => {
-                            return <div className='flex border lg:m-5 bg-slate-400 p-5 rounded-lg'>
+                            return <div className='flex border lg:m-4 bg-slate-400 p-1 rounded-lg'>
                                 <SingleQuestion key={singleQuestion.id} singleQuestion={singleQuestion} setRightCount={setRightCount} setWrongCount={setWrongCount}></SingleQuestion>
                                 <button onClick={() => showCorrectAnswer(singleQuestion.correctAnswer)}
                                     className='btn btn-accent btn-sm'>
