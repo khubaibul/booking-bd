@@ -27,7 +27,7 @@ const Option = ({ option, correctAnswer, setRightCount, setWrongCount }) => {
             <label className="label cursor-pointer">
                 <span className="label-text font-bold text-xl text-slate-200">{option}</span>
                 <input onClick={() => handleQuizAnswer(option)}
-                    type="radio" name="radio-6"
+                    type="radio" name={correctAnswer}
                     className="radio checked:bg-blue-500" />
                 <Toaster></Toaster>
             </label>
