@@ -13,12 +13,10 @@ const Quiz = ({ quiz }) => {
                     <h2 className="card-title text-3xl mb-5">{name}</h2>
                     <div className="badge badge-accent font-bold">Total Quiz: {total}</div>
                 </div>
-                <div className='flex flex-col items-center mt-5'>
-                    <Link to={`/quiz/${id}`} className='btn btn-accent btn-sm gap-4 px-10'>
-                        Start Quiz
-                        <FontAwesomeIcon icon={faRightLong}></FontAwesomeIcon>
-                    </Link>
-                </div>
+                <Link to={`/quiz/${id}`} className='btn btn-accent flex flex-col items-center mt-5'>
+                    Start Quiz
+                    <FontAwesomeIcon icon={faRightLong}></FontAwesomeIcon>
+                </Link>
             </div>
         </div>
     );

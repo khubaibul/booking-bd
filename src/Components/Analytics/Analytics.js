@@ -43,10 +43,10 @@ const Analytics = () => {
                     <div>
                         <h2 className="card-title text-3xl text-[#ff7979] font-bold">Questions</h2>
                         {
-                            data.map((task, index) => {
-                                return <div className='flex gap-3 items-center'>
+                            data.map((task, idx) => {
+                                return <div key={idx} className='flex gap-3 items-center'>
                                     <FontAwesomeIcon className={task.colors} icon={task.icons}></FontAwesomeIcon>
-                                    <h4 key={index} className={task.colors}><span className='font-bold'>{task.name}</span></h4>
+                                    <h4 className={task.colors}><span className='font-bold'>{task.name}</span></h4>
                                 </div>
                             })
                         }

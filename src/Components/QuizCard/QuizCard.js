@@ -34,7 +34,7 @@ const QuizCard = () => {
                 <h3 className='text-lg font-bold'>Total Question: {total}</h3>
             </div>
             <div className='question-container lg:grid'>
-                <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
+                <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-y-8'>
                     {
                         questions.map((singleQuestion, index) => {
                             return <div className='flex border lg:m-4 bg-slate-400 p-1 rounded-lg'>
@@ -47,8 +47,8 @@ const QuizCard = () => {
                         })
                     }
                 </div>
-                <div>
-                    <div className='ans-calculation bg-slate-400 lg:mt-5 rounded-lg p-5'>
+                <div className='sm:mt-5 md:mt-5 lg:mt-4'>
+                    <div className='ans-calculation bg-slate-400 rounded-lg p-5'>
                         <h4 className='text-xl font-bold'>Correct Answer: <span className='text-accent font-mono font-bold'>{rightCount}</span></h4>
                         <h4 className='text-xl font-bold'>Wrong Answer: <span className='text-accent font-mono font-bold'>{wrongCount}</span></h4>
                     </div>
