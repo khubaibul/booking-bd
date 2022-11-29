@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Montserrat+Subrayada:wght@700&family=Oswald:wght@600&family=Stint+Ultra+Condensed&display=swap');
+
+.hero-txt{
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+.hero-tag{
+    font-family: 'Oswald', sans-serif;
+}
+.pkg-txt{
+    font-family: 'Bree Serif', serif;
+}

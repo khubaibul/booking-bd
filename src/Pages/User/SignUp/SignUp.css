@@ -1,0 +1,53 @@
+.signup-box
+{
+	position: relative;
+	width: 380px;
+	height: 630px;
+	background: #1c1c1c;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.signup-box::before 
+{
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 380px;
+	height: 420px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,#17ac53,#17ac53);
+	animation: animate 6s linear infinite;
+}
+.signup-box::after 
+{
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 380px;
+	height: 420px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,#17ac53,#17ac53);
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+.third-party-login-div{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+.third-party-login-img{
+    background: none;
+    width: 30%;
+}
+.third-party-login-div button{
+    width: 20%;
+    background: none;
+    border: 1px solid #17ac53;
+    border-radius: 5px;
+    margin: 0 2px;
+}
