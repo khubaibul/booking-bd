@@ -8,9 +8,9 @@ const Calendar = () => {
     const newDate = new Date();
     const { setStayDay } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(newDate.getDate() + 2);
+    const [endDate, setEndDate] = useState(new Date().getTime() + 24 * 60 * 60 * 1000);
     const stayDay = differenceInBusinessDays(new Date(endDate), new Date(startDate));
-    setStayDay(stayDay + 1);
+    setStayDay(stayDay);
     return (
         <div className='sm:flex sm:gap-y-2 justify-center p-4 gap-4'>
             <div className='bg-slate-400 p-4 rounded'>
